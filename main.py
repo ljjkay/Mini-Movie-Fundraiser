@@ -1,29 +1,14 @@
-def yes_no(question):
-  while True:
-    response = input(question).lower()
+MAX_TICKETS  = 3
 
-    if response == "yes" or response == "y":
-      return "yes"
-    elif response == "no" or response == "n":
-      return "no"
-    else:
-      print("Please enter yes or no")
-      
+tickets_sold = 0
+while tickets_sold < MAX_TICKETS:
+  name = input("Please enter your name or 'xxx' to quit ")
+  if name == 'xxx':
+    break
 
-    
+  tickets_sold += 1
 
-
-
-while True:
-  want_instructions = input("Would you like the instructions? ").lower()
-
-  if want_instructions == "yes":
-    print("Instructions go here")
-  elif want_instructions == "no":
-    pass
-    print("Ok we will proceed")
+  if tickets_sold == MAX_TICKETS:
+    print("Congragulation you have sold all the tickets")
   else:
-    print("Please enter yes / no")
-
-print("we are done")
-yes_no()
+    print("you have sold {} ticket/s. There is {} ticket/s left")
